@@ -11,16 +11,16 @@ function Footer() {
                 <div className="heading">Links</div>
                 <ul>
                   <li>
-                    <a href="/movies">Movies</a>
+                    <a href="/#">Movies</a>
                   </li>
                   <li>
-                    <a href="/tvshows">TV-Shows</a>
+                    <a href="/#">TV-Shows</a>
                   </li>
                   <li>
-                    <a href="#">Most Watched</a>
+                    <a href="/#">Most Watched</a>
                   </li>
                   <li>
-                    <a href="/topimdb">Top IMDb</a>
+                    <a href="/#">Top IMDb</a>
                   </li>
                 </ul>
               </div>
@@ -28,16 +28,16 @@ function Footer() {
                 <div className="heading">Genre</div>
                 <ul>
                   <li>
-                    <a href="/genre/action">Action</a>
+                    <a href="/#">Action</a>
                   </li>
                   <li>
-                    <a href="/genre/horrnor">Horrnor</a>
+                    <a href="/#">Horrnor</a>
                   </li>
                   <li>
-                    <a href="/genre/sci-fi">Sci-fi</a>
+                    <a href="/#">Sci-fi</a>
                   </li>
                   <li>
-                    <a href="/genre/thriller">Thriller</a>
+                    <a href="/#">Thriller</a>
                   </li>
                 </ul>
               </div>
@@ -45,13 +45,13 @@ function Footer() {
                 <div className="heading">More</div>
                 <ul>
                   <li>
-                    <a href="/contact">Contact</a>
+                    <a href="/#">Contact</a>
                   </li>
                   <li>
-                    <a href="#">Request</a>
+                    <a href="/#">Request</a>
                   </li>
                   <li>
-                    <a href="#">Sitemap</a>
+                    <a href="/#">Sitemap</a>
                   </li>
                 </ul>
               </div>
@@ -61,7 +61,7 @@ function Footer() {
               <div className="heading">About Us</div>
               <div className="desc">
                 <p>
-                  <a href="/">
+                  <a href="/#">
                     <strong>FlixTor </strong>
                   </a>
                   is a free movies streaming website with a big database, lots
@@ -84,10 +84,10 @@ function Footer() {
         <div className="foo-b">
           <div className="container">
             <div className="links">
-              <a href="#">Sitemap</a>
-              <a href="/contact">Contact</a>
-              <a href="#">About Us</a>
-              <a href="#">DMCA</a>
+              <a href="/#">Sitemap</a>
+              <a href="/#">Contact</a>
+              <a href="/#">About Us</a>
+              <a href="/#">DMCA</a>
             </div>
           </div>
         </div>

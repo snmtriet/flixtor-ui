@@ -346,6 +346,10 @@ header .head_r .head_r-auth p {
   background: #adb5bd;
 }
 
+.container-body .bl .simple .more i {
+  margin-left: 20px;
+}
+
 .container-body .bl .content {
   margin-top: 2rem;
 }

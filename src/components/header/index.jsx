@@ -1,8 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axiosClient from "../../axiosClient";
 
 function Header() {
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
+  const [genres, setGenres] = useState([]);
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const dataGenres = await axiosClient.get("/genres");
+        setGenres(dataGenres.data);
+        const dataCountries = await axiosClient.get("/countries");
+        setCountries(dataCountries.data);
+      } catch (error) {
+        console.log("🍕 ~ error", error);
+      }
+    };
+    getData();
+  }, []);
   return (
     <>
       <header>
@@ -11,386 +28,51 @@ function Header() {
         </div>
         <div className="head_l">
           <div className="head_l-logo">
-            <a href="/">
+            <a href="/#">
               <img src="logo.png" alt="flixtor-logo" width="30px" />
               <h2>FlixTor.Video</h2>
             </a>
           </div>
           <ul className="menu">
             <li>
-              <a href="/">HOME</a>
+              <a href="/#">HOME</a>
             </li>
             <li className="li-genre">
               <a>GENRE</a>
               <ul className="genre">
-                <li>
-                  {" "}
-                  <a title="Action movies" href="/">
-                    Action
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="Adventure movies" href="/">
-                    Adventure
-                  </a>
-                </li>
-                <li>
-                  <a title="Animation movies" href="/">
-                    Animation
-                  </a>
-                </li>
-                <li>
-                  <a title="Biography movies" href="/">
-                    Biography
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="Costume movies" href="/">
-                    Costume
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Comedy movies" href="/">
-                    Comedy
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Crime movies" href="/">
-                    Crime
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="Documentary movies" href="/">
-                    Documentary
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="Drama movies" href="/">
-                    Drama
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Family movies" href="/">
-                    Family
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Fantasy movies" href="/">
-                    Fantasy
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="Game-Show movies" href="/">
-                    Game-Show
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="History movies" href="/">
-                    History
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Horror movies" href="/">
-                    Horror
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Kungfu movies" href="/">
-                    Kungfu
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Music movies" href="/">
-                    Music
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Mystery movies" href="/">
-                    Mystery
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="Reality-TV movies" href="/">
-                    Reality-TV
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="Romance movies" href="/">
-                    Romance
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Sci-Fi movies" href="/">
-                    Sci-Fi
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Sport movies" href="/">
-                    Sport
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="Thriller movies" href="/">
-                    Thriller
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="TV Show movies" href="/">
-                    TV Show
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="War movies" href="/">
-                    War
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Western movies" href="/">
-                    Western
-                  </a>{" "}
-                </li>
+                {genres.map((item) => {
+                  return (
+                    <li key={item._id}>
+                      <a title={item.name} href="/#">
+                        {item.name}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </li>
             <li className="li-country">
               <a>COUNTRY</a>
               <ul className="country">
-                <li>
-                  <a title="Argentina movies" href="/">
-                    Argentina
-                  </a>
-                </li>
-                <li>
-                  <a title="Australia movies" href="/">
-                    Australia
-                  </a>
-                </li>
-                <li>
-                  <a title="Austria movies" href="/">
-                    Austria
-                  </a>
-                </li>
-                <li>
-                  <a title="Belgium movies" href="/">
-                    Belgium
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="Brazil movies" href="/">
-                    Brazil
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Canada movies" href="/">
-                    Canada
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="China movies" href="/">
-                    China
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="Czech Republic movies" href="/">
-                    Czech Republic
-                  </a>
-                </li>
-                <li>
-                  <a title="Denmark movies" href="/">
-                    Denmark
-                  </a>
-                </li>
-                <li>
-                  <a title="Finland movies" href="/">
-                    Finland
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="France movies" href="/">
-                    France
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="Germany movies" href="/">
-                    Germany
-                  </a>
-                </li>
-                <li>
-                  <a title="Hong Kong movies" href="/">
-                    Hong Kong
-                  </a>
-                </li>
-                <li>
-                  <a title="Hungary movies" href="/">
-                    Hungary
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="India movies" href="/">
-                    India
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="International movies" href="/">
-                    International
-                  </a>
-                </li>
-                <li>
-                  <a title="Ireland movies" href="/">
-                    Ireland
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="Israel movies" href="/">
-                    Israel
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Italy movies" href="/">
-                    Italy
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Japan movies" href="/">
-                    Japan
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="Luxembourg movies" href="/">
-                    Luxembourg
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="Mexico movies" href="/">
-                    Mexico
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="Netherlands movies" href="/">
-                    Netherlands
-                  </a>
-                </li>
-                <li>
-                  <a title="New Zealand movies" href="/zealand">
-                    New Zealand
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="Norway movies" href="/">
-                    Norway
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="Philippines movies" href="/">
-                    Philippines
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="Poland movies" href="/">
-                    Poland
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="Romania movies" href="/">
-                    Romania
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="Russia movies" href="/">
-                    Russia
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="South Africa movies" href="/africa">
-                    South Africa
-                  </a>
-                </li>
-                <li>
-                  <a title="South Korea movies" href="/korea">
-                    South Korea
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="Spain movies" href="/">
-                    Spain
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a title="Sweden movies" href="/">
-                    Sweden
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="Switzerland movies" href="/">
-                    Switzerland
-                  </a>
-                </li>
-                <li>
-                  {" "}
-                  <a title="Taiwan movies" href="/">
-                    Taiwan
-                  </a>{" "}
-                </li>
-                <li>
-                  <a title="Thailand movies" href="/">
-                    Thailand
-                  </a>
-                </li>
-                <li>
-                  <a title="United Kingdom movies" href="/">
-                    United Kingdom
-                  </a>
-                </li>
-                <li>
-                  <a title="United States movies" href="/">
-                    United States
-                  </a>
-                </li>
-                <li>
-                  <a title="West Germany movies" href="/">
-                    West Germany
-                  </a>
-                </li>
+                {countries.map((item) => {
+                  return (
+                    <li key={item._id}>
+                      <a title={item.name} href="/#">
+                        {item.name}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </li>
             <li>
-              <a href="/movies">MOVIES</a>
+              <a href="/#">MOVIES</a>
             </li>
             <li>
-              <a href="/tv-series">TV SHOWS</a>
+              <a href="/#">TV SHOWS</a>
             </li>
             <li>
-              <a href="/top-imdb">TOP IMDB</a>
+              <a href="/#">TOP IMDB</a>
             </li>
           </ul>
         </div>

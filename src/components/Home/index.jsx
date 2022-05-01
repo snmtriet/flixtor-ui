@@ -1,5 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axiosClient from "../../axiosClient";
 function Home() {
+  const [movies, setMovies] = useState([]);
+  const [moviesTV, setMoviesTV] = useState([]);
+  const [lastestMovie, setLastestMovie] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const dataMovies = await axiosClient.get("/movies");
+        const typeMovie = dataMovies.data.filter((item) => {
+          return item.category.name === "Movie";
+        });
+        const typeTV = dataMovies.data.filter((item) => {
+          return item.category.name === "TV";
+        });
+        setMovies(typeMovie);
+        setMoviesTV(typeTV);
+        setLastestMovie(typeMovie.reverse());
+      } catch (error) {
+        console.log("🍕 ~ error", error);
+      }
+    };
+    getData();
+  }, []);
+
   return (
     <>
       <div className="home-container">
@@ -62,238 +87,36 @@ function Home() {
           <br />
           <div className="content">
             <div className="filmlist">
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a
-                  href="https://static.bunnycdn.ru/i/cache/images/f/ff/ffbea2fbb35853c25918894e205100f0.jpg-w380"
-                  title="dsad"
-                  className="poster"
-                >
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/9/92/928098f2b5f5acb8c13eea55be96cda9.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/movie/the-ice-age-adventures-of-buck-wild-zk5w3"
-                  >
-                    dsadsaa
-                  </a>
-                </h3>
-                <div className="meta">
-                  <span className="release">3232</span>
-                  <i className="dot"></i>
-                  87432 min
-                  <i className="type">Movie</i>
-                </div>
-              </div>
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a
-                  href="https://static.bunnycdn.ru/i/cache/images/f/ff/ffbea2fbb35853c25918894e205100f0.jpg-w380"
-                  title="dsad"
-                  className="poster"
-                >
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/9/92/928098f2b5f5acb8c13eea55be96cda9.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/movie/the-ice-age-adventures-of-buck-wild-zk5w3"
-                  >
-                    dsadsaa
-                  </a>
-                </h3>
-                <div className="meta">
-                  <span className="release">3232</span>
-                  <i className="dot"></i>
-                  87432 min
-                  <i className="type">Movie</i>
-                </div>
-              </div>
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a
-                  href="https://static.bunnycdn.ru/i/cache/images/f/ff/ffbea2fbb35853c25918894e205100f0.jpg-w380"
-                  title="dsad"
-                  className="poster"
-                >
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/9/92/928098f2b5f5acb8c13eea55be96cda9.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/movie/the-ice-age-adventures-of-buck-wild-zk5w3"
-                  >
-                    dsadsaa
-                  </a>
-                </h3>
-                <div className="meta">
-                  <span className="release">3232</span>
-                  <i className="dot"></i>
-                  87432 min
-                  <i className="type">Movie</i>
-                </div>
-              </div>
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a
-                  href="https://static.bunnycdn.ru/i/cache/images/f/ff/ffbea2fbb35853c25918894e205100f0.jpg-w380"
-                  title="dsad"
-                  className="poster"
-                >
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/9/92/928098f2b5f5acb8c13eea55be96cda9.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/movie/the-ice-age-adventures-of-buck-wild-zk5w3"
-                  >
-                    dsadsaa
-                  </a>
-                </h3>
-                <div className="meta">
-                  <span className="release">3232</span>
-                  <i className="dot"></i>
-                  87432 min
-                  <i className="type">Movie</i>
-                </div>
-              </div>
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a
-                  href="https://static.bunnycdn.ru/i/cache/images/f/ff/ffbea2fbb35853c25918894e205100f0.jpg-w380"
-                  title="dsad"
-                  className="poster"
-                >
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/9/92/928098f2b5f5acb8c13eea55be96cda9.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/movie/the-ice-age-adventures-of-buck-wild-zk5w3"
-                  >
-                    dsadsaa
-                  </a>
-                </h3>
-                <div className="meta">
-                  <span className="release">3232</span>
-                  <i className="dot"></i>
-                  87432 min
-                  <i className="type">Movie</i>
-                </div>
-              </div>
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a
-                  href="https://static.bunnycdn.ru/i/cache/images/f/ff/ffbea2fbb35853c25918894e205100f0.jpg-w380"
-                  title="dsad"
-                  className="poster"
-                >
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/9/92/928098f2b5f5acb8c13eea55be96cda9.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/movie/the-ice-age-adventures-of-buck-wild-zk5w3"
-                  >
-                    dsadsaa
-                  </a>
-                </h3>
-                <div className="meta">
-                  <span className="release">3232</span>
-                  <i className="dot"></i>
-                  87432 min
-                  <i className="type">Movie</i>
-                </div>
-              </div>
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a
-                  href="https://static.bunnycdn.ru/i/cache/images/f/ff/ffbea2fbb35853c25918894e205100f0.jpg-w380"
-                  title="dsad"
-                  className="poster"
-                >
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/9/92/928098f2b5f5acb8c13eea55be96cda9.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/movie/the-ice-age-adventures-of-buck-wild-zk5w3"
-                  >
-                    dsadsaa
-                  </a>
-                </h3>
-                <div className="meta">
-                  <span className="release">3232</span>
-                  <i className="dot"></i>
-                  87432 min
-                  <i className="type">Movie</i>
-                </div>
-              </div>
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a
-                  href="https://static.bunnycdn.ru/i/cache/images/f/ff/ffbea2fbb35853c25918894e205100f0.jpg-w380"
-                  title="dsad"
-                  className="poster"
-                >
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/9/92/928098f2b5f5acb8c13eea55be96cda9.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/movie/the-ice-age-adventures-of-buck-wild-zk5w3"
-                  >
-                    dsadsaa
-                  </a>
-                </h3>
-                <div className="meta">
-                  <span className="release">3232</span>
-                  <i className="dot"></i>
-                  87432 min
-                  <i className="type">Movie</i>
-                </div>
-              </div>
+              {movies.length > 0 &&
+                movies.slice(0, -8).map((item) => {
+                  return (
+                    <div key={item._id} className="item">
+                      <div className="icons">
+                        <div className="quality">{item.quality}</div>
+                      </div>
+                      <a href={item.image} title={item.name} className="poster">
+                        <div className="play"></div>
+                        <img src={item.image} />
+                        <div className="overlay-poster"></div>
+                      </a>
+                      <h3>
+                        <a
+                          className="title"
+                          title={item.name}
+                          href={item.image}
+                        >
+                          {item.name}
+                        </a>
+                      </h3>
+                      <div className="meta">
+                        <span className="release">{2022}</span>
+                        <i className="dot"></i>
+                        {item.time === 0 ? "na min" : `${item.time} min`}
+                        <i className="type">{item.category.name}</i>
+                      </div>
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </section>
@@ -308,35 +131,38 @@ function Home() {
           </div>
           <div className="content">
             <div className="filmlist">
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a
-                  href="/series/`${{this.name}}-${{this.url}}`"
-                  title="{{this.name}}"
-                  className="poster"
-                >
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/1/1e/1effd30150640f6f0ea1ad5a43c9d57e.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/series/`${{this.name}}-${{this.url}}`"
-                  >
-                    dsadsad
-                  </a>
-                </h3>
-                <div className="meta">
-                  <span className="release">3232</span>
-                  <i className="dot"></i>
-                  na min min
-                  <i className="type">Movie</i>
-                </div>
-              </div>
+              {lastestMovie
+                .reverse()
+                .slice(0, 8)
+                .map((item) => {
+                  return (
+                    <div key={item._id} className="item">
+                      <div className="icons">
+                        <div className="quality">{item.quality}</div>
+                      </div>
+                      <a href={item.image} title={item.name} className="poster">
+                        <div className="play"></div>
+                        <img src={item.image} />
+                        <div className="overlay-poster"></div>
+                      </a>
+                      <h3>
+                        <a
+                          className="title"
+                          title={item.name}
+                          href={item.image}
+                        >
+                          {item.name}
+                        </a>
+                      </h3>
+                      <div className="meta">
+                        <span className="release">2022</span>
+                        <i className="dot"></i>
+                        {item.time === 0 ? "na min" : `${item.time} min`}
+                        <i className="type">{item.category.name}</i>
+                      </div>
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </section>
@@ -351,180 +177,30 @@ function Home() {
           </div>
           <div className="content">
             <div className="filmlist">
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a href="#" title="32" className="poster">
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/1/1e/1effd30150640f6f0ea1ad5a43c9d57e.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/series/`${{this.name}}-${{this.url}}`"
-                  >
-                    dsadas
-                  </a>
-                </h3>
-                <div className="meta">
-                  SS 4<i className="dot"></i>
-                  EP 13
-                  <i className="type">TV</i>
-                </div>
-              </div>
-
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a href="#" title="32" className="poster">
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/1/1e/1effd30150640f6f0ea1ad5a43c9d57e.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/series/`${{this.name}}-${{this.url}}`"
-                  >
-                    dsadas
-                  </a>
-                </h3>
-                <div className="meta">
-                  SS 4<i className="dot"></i>
-                  EP 13
-                  <i className="type">TV</i>
-                </div>
-              </div>
-
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a href="#" title="32" className="poster">
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/1/1e/1effd30150640f6f0ea1ad5a43c9d57e.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/series/`${{this.name}}-${{this.url}}`"
-                  >
-                    dsadas
-                  </a>
-                </h3>
-                <div className="meta">
-                  SS 4<i className="dot"></i>
-                  EP 13
-                  <i className="type">TV</i>
-                </div>
-              </div>
-
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a href="#" title="32" className="poster">
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/1/1e/1effd30150640f6f0ea1ad5a43c9d57e.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/series/`${{this.name}}-${{this.url}}`"
-                  >
-                    dsadas
-                  </a>
-                </h3>
-                <div className="meta">
-                  SS 4<i className="dot"></i>
-                  EP 13
-                  <i className="type">TV</i>
-                </div>
-              </div>
-
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a href="#" title="32" className="poster">
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/1/1e/1effd30150640f6f0ea1ad5a43c9d57e.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/series/`${{this.name}}-${{this.url}}`"
-                  >
-                    dsadas
-                  </a>
-                </h3>
-                <div className="meta">
-                  SS 4<i className="dot"></i>
-                  EP 13
-                  <i className="type">TV</i>
-                </div>
-              </div>
-
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a href="#" title="32" className="poster">
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/1/1e/1effd30150640f6f0ea1ad5a43c9d57e.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/series/`${{this.name}}-${{this.url}}`"
-                  >
-                    dsadas
-                  </a>
-                </h3>
-                <div className="meta">
-                  SS 4<i className="dot"></i>
-                  EP 13
-                  <i className="type">TV</i>
-                </div>
-              </div>
-
-              <div className="item">
-                <div className="icons">
-                  <div className="quality">HD</div>
-                </div>
-                <a href="#" title="32" className="poster">
-                  <div className="play"></div>
-                  <img src="https://static.bunnycdn.ru/i/cache/images/1/1e/1effd30150640f6f0ea1ad5a43c9d57e.jpg-w380" />
-                  <div className="overlay-poster"></div>
-                </a>
-                <h3>
-                  <a
-                    className="title"
-                    title="{{this.name}}"
-                    href="/series/`${{this.name}}-${{this.url}}`"
-                  >
-                    dsadas
-                  </a>
-                </h3>
-                <div className="meta">
-                  SS 4<i className="dot"></i>
-                  EP 13
-                  <i className="type">TV</i>
-                </div>
-              </div>
+              {moviesTV.map((item) => {
+                return (
+                  <div key={item._id} className="item">
+                    <div className="icons">
+                      <div className="quality">{item.quality}</div>
+                    </div>
+                    <a href={item.image} title={item.name} className="poster">
+                      <div className="play"></div>
+                      <img src={item.image} />
+                      <div className="overlay-poster"></div>
+                    </a>
+                    <h3>
+                      <a className="title" title={item.name} href={item.image}>
+                        {item.name}
+                      </a>
+                    </h3>
+                    <div className="meta">
+                      SS 4<i className="dot"></i>
+                      {item.time === 0 && "na min"}
+                      <i className="type">{item.category.name}</i>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
