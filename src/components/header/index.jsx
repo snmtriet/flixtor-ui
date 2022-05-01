@@ -6,6 +6,9 @@ function Header() {
   return (
     <>
       <header>
+        <div className="menu-toggle">
+          <i className="fa fa-list-ul"></i>
+        </div>
         <div className="head_l">
           <div className="head_l-logo">
             <a href="/">
@@ -392,20 +395,15 @@ function Header() {
           </ul>
         </div>
         <div className="head_r">
-          {/* <div className="head_r-search">
-            <form action="search">
-              <input
-                className="input-search"
-                type="text"
-                name="keyword"
-                placeholder="Enter your keywords..."
-              />
-              <button>
-                <img src="search_icon.png" alt="search.png" />
-              </button>
-            </form>
-          </div> */}
           <div className="head_r-auth">
+            <i
+              onClick={() => {
+                setOpen(!open);
+                document.body.style.height = "100%";
+                document.body.style.overflow = "hidden";
+              }}
+              className="fa-solid fa-user"
+            ></i>
             <img className="img-auth" src="user.png" alt="img" />
             <p
               onClick={() => {
@@ -419,6 +417,19 @@ function Header() {
           </div>
         </div>
       </header>
+      <div className="search-mobile">
+        <form action="search">
+          <input
+            className="input-search"
+            type="text"
+            name="keyword"
+            placeholder="Enter your keywords..."
+          />
+          <button>
+            <img src="search_icon.png" alt="search.png" />
+          </button>
+        </form>
+      </div>
       <div
         onClick={() => {
           setOpen(false);

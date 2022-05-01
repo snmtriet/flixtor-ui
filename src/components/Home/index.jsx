@@ -45,20 +45,19 @@ function Home() {
         <section className="bl">
           <div className="heading">
             <h2>Recommended</h2>
-            <div className="tabs">
-              <span data-name="movies" className="active">
-                <i className="fas fa-play-circle"></i>
-                Movies
-              </span>
-              <span data-name="series">
-                <i className="fas fa-list"></i> TV Shows
-              </span>
-              <span data-name="trending">
-                <i className="fas fa-chart-line"></i>
-                Trending
-              </span>
-            </div>
-            <br />
+          </div>
+          <div className="tabs">
+            <span data-name="movies" className="active">
+              <i className="fas fa-play-circle"></i>
+              Movies
+            </span>
+            <span data-name="series">
+              <i className="fas fa-list"></i> TV Shows
+            </span>
+            <span data-name="trending">
+              <i className="fas fa-chart-line"></i>
+              Trending
+            </span>
           </div>
           <br />
           <div className="content">

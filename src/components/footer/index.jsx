@@ -62,12 +62,12 @@ function Footer() {
               <div className="desc">
                 <p>
                   <a href="/">
-                    <strong>FlixTor</strong>
+                    <strong>FlixTor </strong>
                   </a>
                   is a free movies streaming website with a big database, lots
                   of great features and beautifuly layout. With
-                  <strong>FlixTor</strong>, you can easily find and
-                  <strong>watch movies</strong>, tv shows htmlFor free in high
+                  <strong> FlixTor</strong>, you can easily find and
+                  <strong> watch movies</strong>, tv shows htmlFor free in high
                   quality without registration.
                   <br />
                   <strong>FlixTor movies online</strong>, watch FlixTor free,
