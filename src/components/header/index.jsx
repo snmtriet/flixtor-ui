@@ -6,6 +6,9 @@ function Header() {
   const [open2, setOpen2] = useState(false);
   const [genres, setGenres] = useState([]);
   const [countries, setCountries] = useState([]);
+  const [showMenuMobile, setShowMenuMobile] = useState(false);
+  const [showGenres, setShowGenres] = useState(false);
+  const [showCountries, setshowCountries] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
@@ -23,9 +26,85 @@ function Header() {
   return (
     <>
       <header>
-        <div className="menu-toggle">
+        <div
+          className="menu-toggle"
+          onClick={() => {
+            setShowMenuMobile(!showMenuMobile);
+          }}
+        >
           <i className="fa fa-list-ul"></i>
         </div>
+        {showMenuMobile && (
+          <ul className="menu">
+            <li>
+              <a href="/#">Home</a>
+            </li>
+            <li
+              onClick={() => {
+                setShowGenres(!showGenres);
+                setshowCountries(false);
+              }}
+            >
+              <a>
+                Genre <i className="fa fa-plus"></i>
+              </a>
+              {showGenres && (
+                <ul className="genre">
+                  {genres.length > 0 &&
+                    genres.map((item) => {
+                      return (
+                        <li key={item._id}>
+                          <a title={item.name} href="/#">
+                            {item.name}
+                          </a>
+                        </li>
+                      );
+                    })}
+                </ul>
+              )}
+            </li>
+            <li
+              onClick={() => {
+                setshowCountries(!showCountries);
+                setShowGenres(false);
+              }}
+            >
+              <a>
+                Country <i className="fa fa-plus"></i>
+              </a>
+              {showCountries && (
+                <ul className="country">
+                  {countries.length > 0 &&
+                    countries.map((item) => {
+                      return (
+                        <li key={item._id}>
+                          <a title={item.name} href="/#">
+                            {item.name}
+                          </a>
+                        </li>
+                      );
+                    })}
+                </ul>
+              )}
+            </li>
+            <li>
+              <a href="/#" title="Movies">
+                Movies
+              </a>
+            </li>
+            <li>
+              <a href="/#" title="TV Shows">
+                TV Shows
+              </a>
+            </li>
+            <li>
+              <a href="/#" title="Top IMDb">
+                Top IMDb
+              </a>
+            </li>
+          </ul>
+        )}
+
         <div className="head_l">
           <div className="head_l-logo">
             <a href="/#">

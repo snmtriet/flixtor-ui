@@ -35,6 +35,10 @@ header .menu-toggle {
   display: none;
 }
 
+header .menu {
+  display: none;
+}
+
 header .head_l {
   width: 80%;
   display: -webkit-box;
@@ -782,754 +786,6 @@ header .head_r .head_r-auth p {
   text-decoration: none;
 }
 
-.container-body .nav {
-  display: block;
-  line-height: 45px;
-  padding: 0 8.5rem;
-}
-
-.container-body .nav .breadcrumb {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  list-style: none;
-  border-radius: 0.25rem;
-}
-
-.container-body .nav .breadcrumb .breadcrumb-item a {
-  text-decoration: none;
-  color: black;
-}
-
-.container-body .nav .breadcrumb .breadcrumb-item:nth-child(2)::before, .container-body .nav .breadcrumb .breadcrumb-item:nth-child(3)::before {
-  display: inline-block;
-  padding-right: 0.5rem;
-  color: #6c757d;
-  content: "/";
-}
-
-.container-body .watch {
-  padding: 0 8.5rem;
-  background-color: black;
-  height: 900px;
-}
-
-.container-body .watch .play {
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-}
-
-.container-body .watch .play .container #player {
-  height: 60em;
-  display: block;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  position: relative;
-  z-index: 3;
-}
-
-.container-body .controls {
-  padding: 0 8.5rem;
-  margin-top: 15px;
-  overflow: hidden;
-}
-
-.container-body .controls .items div {
-  float: left;
-  line-height: 25px;
-  border-radius: 12.5px;
-  font-size: 0.8em;
-  padding: 0 15px;
-  cursor: pointer;
-  background: #dee2e6;
-  color: #495057;
-  border-radius: 3px;
-  -webkit-transition: all 0.2s ease-in-out 0s;
-  transition: all 0.2s ease-in-out 0s;
-  margin-right: 10px;
-  margin-bottom: 8px;
-}
-
-.container-body .controls .items div:hover {
-  background-color: #ccd1d6;
-}
-
-.container-body .episodes {
-  padding: 0 8.5rem;
-  margin: 30px 0 40px;
-  font-size: 14px;
-}
-
-.container-body .episodes .season-list {
-  display: block;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  padding: 0.8rem 0.2rem;
-  width: 215px;
-  cursor: pointer;
-}
-
-.container-body .episodes .season-list select.season-select {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
-
-.container-body .episodes .episodes-list {
-  overflow: hidden;
-  width: 100%;
-}
-
-.container-body .episodes .episodes-list div {
-  width: 19.5%;
-  float: left;
-  background-color: #dee2e6;
-  padding: 0.8rem 0.5rem;
-  margin-left: 8px;
-  margin-bottom: 8px;
-  border-radius: 5px;
-}
-
-.container-body .episodes .episodes-list div:hover .episode,
-.container-body .episodes .episodes-list div:hover .episode-part {
-  color: #17a2b8;
-}
-
-.container-body .episodes .episodes-list div:hover {
-  background-color: #dcdee0;
-}
-
-.container-body .episodes .episodes-list div a {
-  text-decoration: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: #212529;
-}
-
-.container-body .episodes .episodes-list div a span {
-  color: #212529;
-  font-weight: 500;
-}
-
-.container-body .episodes .episodes-list div a span.active {
-  color: #fff;
-}
-
-.container-body .episodes .episodes-list div a p {
-  margin-left: 5px;
-}
-
-.container-body .episodes .episodes-list div a p.active {
-  color: #fff;
-}
-
-.container-body .episodes .episodes-list div.active {
-  background-color: #17a2b8;
-}
-
-.container-body .episodes .episodes-list div.active:hover .episode,
-.container-body .episodes .episodes-list div.active:hover .episode-part {
-  color: #fff;
-}
-
-.container-body .watch-extra {
-  padding: 0 8.5rem;
-  margin-top: 15px;
-  overflow: hidden;
-}
-
-.container-body .watch-extra .bl-1 {
-  float: left;
-  width: 65%;
-}
-
-.container-body .watch-extra .bl-2 {
-  float: left;
-  width: 33%;
-  margin-left: 2%;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .heading h2 {
-  float: left;
-  font-weight: 100;
-  font-size: 1.8em;
-  display: inline-block;
-  margin-bottom: 0;
-  opacity: 0.8;
-  position: relative;
-  color: #17a2b8;
-  font-weight: 300;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .heading h2::before {
-  position: absolute;
-  content: "";
-  height: 1px;
-  width: 80%;
-  top: 120%;
-  left: 0;
-  background: #adb5bd;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content {
-  overflow: hidden;
-  width: 100%;
-  padding: 1rem 0;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist {
-  margin: 0 -0.4%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item {
-  float: left;
-  display: block;
-  width: 31.333333333%;
-  margin: 0 1%;
-  position: relative;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item .icons {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 2;
-  font-size: 0.86em;
-  font-weight: 500;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item .icons .quality {
-  float: left;
-  margin-left: 5px;
-  height: 20px;
-  line-height: 20px;
-  padding: 0 5px;
-  border-radius: 3px;
-  text-transform: uppercase;
-  background: #f8f9fa;
-  color: #212529;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item .poster {
-  width: 100%;
-  border-radius: 4px;
-  overflow: hidden;
-  display: block;
-  margin-bottom: 10px;
-  position: relative;
-  background: #dee2e6;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item .poster:hover .play {
-  opacity: 1;
-  visibility: visible;
-  z-index: 2;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item .poster:hover .overlay-poster {
-  opacity: 1;
-  -webkit-transition: all ease-in-out 0.3s;
-  transition: all ease-in-out 0.3s;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item .poster .play {
-  height: 60px;
-  width: 60px;
-  position: absolute;
-  -webkit-transform: translate(100%, 150%);
-          transform: translate(100%, 150%);
-  line-height: 60px;
-  margin-top: 0px;
-  margin-left: 5px;
-  text-align: center;
-  font-weight: 900;
-  cursor: pointer;
-  border-radius: 50%;
-  background: rgba(13, 170, 194, 0.9);
-  color: #e9ecef;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: all, ease-in-out 0.2s;
-  transition: all, ease-in-out 0.2s;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item .poster .play::before {
-  content: "";
-  position: absolute;
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
-  font-family: "Font Awesome 5 Free";
-  display: block;
-  font-size: 1.5em;
-  margin-left: 0.2em;
-  -webkit-transition: all 0.2s ease-in-out 0s;
-  transition: all 0.2s ease-in-out 0s;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item .poster img {
-  width: 100%;
-  border-radius: 4px;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item .poster .overlay-poster {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item .meta {
-  font-size: 0.9em;
-  height: 50px;
-  display: block;
-  overflow: hidden;
-  color: #6c757d;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item .meta .dot {
-  width: 3px;
-  height: 3px;
-  vertical-align: 2px;
-  border-radius: 50%;
-  display: inline-block;
-  background: #5e5e5e;
-  content: "";
-  margin: 0 5px;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item .meta .type {
-  display: inline-block;
-  float: right;
-  font-style: normal;
-  border: 1px solid #a1a8ae;
-  border-radius: 3px;
-  padding: 5px 3px 3px;
-  line-height: 0.8em;
-  font-size: 0.8em;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item h3 {
-  font-size: 1em;
-  font-weight: 500;
-}
-
-.container-body .watch-extra .bl-2 .bl-more .content .filmlist .item h3 .title {
-  color: #343a40;
-  font-size: 1em;
-  font-weight: 500;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: block;
-  text-decoration: none;
-}
-
-.container-body .watch-extra section.info {
-  clear: both;
-  margin-bottom: 30px;
-  overflow: hidden;
-  border-radius: 0.3rem;
-  padding: 25px;
-  -webkit-box-shadow: 0 0 20px 10px #cccccc4d;
-          box-shadow: 0 0 20px 10px #cccccc4d;
-  background: #fff;
-}
-
-.container-body .watch-extra section.info .info {
-  margin-left: 280px;
-}
-
-.container-body .watch-extra section.info .info a {
-  color: #545b62;
-  text-decoration: none;
-}
-
-.container-body .watch-extra section.info .info a:hover {
-  color: #17a2b8;
-}
-
-.container-body .watch-extra section.info .poster {
-  width: 250px;
-  float: left;
-}
-
-.container-body .watch-extra section.info .poster span {
-  position: relative;
-  width: 100%;
-  padding-bottom: 145%;
-  display: block;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 3px solid #ffffff33;
-}
-
-.container-body .watch-extra section.info .poster span img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.container-body .watch-extra section.info .rating {
-  float: right;
-  margin-top: 14px;
-}
-
-.container-body .watch-extra section.info .rating .stars {
-  display: inline-block;
-  font-size: 1.5em;
-}
-
-.container-body .watch-extra section.info .rating .text {
-  color: #ced4da;
-  font-size: 0.9em;
-  display: block;
-  text-align: center;
-  font-style: italic;
-}
-
-.container-body .watch-extra section.info .rating .text:hover {
-  color: #b8bec5;
-}
-
-.container-body .watch-extra section.info .title {
-  color: #212529;
-  font-weight: 300;
-  font-size: 2.5rem;
-}
-
-.container-body .watch-extra section.info .meta {
-  font-weight: 300;
-  font-size: 15px;
-}
-
-.container-body .watch-extra section.info .meta .quality {
-  background: #fff;
-  border: 1px solid #212529;
-  color: #212529;
-  font-weight: 700;
-  font-size: 0.85em;
-  padding: 3px 5px;
-  border-radius: 0.25rem;
-  text-shadow: none;
-}
-
-.container-body .watch-extra section.info .meta .imdb {
-  margin-left: 15px;
-  font-weight: 500;
-}
-
-.container-body .watch-extra section.info .meta .time {
-  margin-left: 15px;
-  font-weight: 300;
-}
-
-.container-body .watch-extra section.info .meta div {
-  margin-bottom: 6px;
-}
-
-.container-body .watch-extra section.info .meta div span:nth-child(1) {
-  display: block;
-  float: left;
-  color: #495057;
-  font-weight: 400;
-}
-
-.container-body .watch-extra section.info .meta div span:nth-child(2) {
-  display: block;
-  margin-left: 120px;
-}
-
-.container-body .watch-extra section.info div {
-  margin-bottom: 15px;
-}
-
-.container-body .watch-extra section.info .desc {
-  line-height: 1.6em;
-  font-size: 1.05em;
-  font-weight: 300;
-}
-
-.container-body .container-movies,
-.container-body .container-tvshows,
-.container-body .container-topimdb {
-  margin-top: 3rem !important;
-}
-
-.container-body .container-movies .filters,
-.container-body .container-tvshows .filters,
-.container-body .container-topimdb .filters {
-  display: inline-block;
-  font-size: 0.9em;
-  border-radius: 20px;
-  position: relative;
-  top: 12px;
-  margin-top: 10px;
-  padding-bottom: 15px;
-  width: 100%;
-}
-
-.container-body .container-movies .filters .filter,
-.container-body .container-tvshows .filters .filter,
-.container-body .container-topimdb .filters .filter {
-  float: left;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  position: relative;
-}
-
-.container-body .container-movies .filters .filter .dropdown-toggle:hover,
-.container-body .container-tvshows .filters .filter .dropdown-toggle:hover,
-.container-body .container-topimdb .filters .filter .dropdown-toggle:hover {
-  background-color: #f5f0f0;
-}
-
-.container-body .container-movies .filters .filter .dropdown-toggle:focus ~ .dropdown-menu,
-.container-body .container-tvshows .filters .filter .dropdown-toggle:focus ~ .dropdown-menu,
-.container-body .container-topimdb .filters .filter .dropdown-toggle:focus ~ .dropdown-menu {
-  display: block;
-}
-
-.container-body .container-movies .filters .filter button,
-.container-body .container-tvshows .filters .filter button,
-.container-body .container-topimdb .filters .filter button {
-  cursor: pointer;
-  background: #dee2e6;
-  border: none;
-  padding: 0 28px;
-  height: 35px;
-  border-radius: 5px;
-  color: #343a40;
-  -webkit-transition: all 0.2s ease-in-out 0s;
-  transition: all 0.2s ease-in-out 0s;
-}
-
-.container-body .container-movies .filters .filter button span,
-.container-body .container-tvshows .filters .filter button span,
-.container-body .container-topimdb .filters .filter button span {
-  font-weight: 100;
-  color: #212529;
-}
-
-.container-body .container-movies .filters .filter .btn-primary,
-.container-body .container-tvshows .filters .filter .btn-primary,
-.container-body .container-topimdb .filters .filter .btn-primary {
-  background: #17a2b8;
-  color: #fff;
-  cursor: pointer;
-}
-
-.container-body .container-movies .filters .filter .btn-primary:hover,
-.container-body .container-tvshows .filters .filter .btn-primary:hover,
-.container-body .container-topimdb .filters .filter .btn-primary:hover {
-  background: #2392a3;
-}
-
-.container-body .container-movies .filters .filter .dropdown-menu.lg,
-.container-body .container-tvshows .filters .filter .dropdown-menu.lg,
-.container-body .container-topimdb .filters .filter .dropdown-menu.lg {
-  width: 600px;
-}
-
-.container-body .container-movies .filters .filter .dropdown-menu.md,
-.container-body .container-tvshows .filters .filter .dropdown-menu.md,
-.container-body .container-topimdb .filters .filter .dropdown-menu.md {
-  width: 400px;
-}
-
-.container-body .container-movies .filters .filter .dropdown-menu.md li,
-.container-body .container-tvshows .filters .filter .dropdown-menu.md li,
-.container-body .container-topimdb .filters .filter .dropdown-menu.md li {
-  width: 33.33333%;
-}
-
-.container-body .container-movies .filters .filter .dropdown-menu.sort,
-.container-body .container-tvshows .filters .filter .dropdown-menu.sort,
-.container-body .container-topimdb .filters .filter .dropdown-menu.sort {
-  width: 180px;
-}
-
-.container-body .container-movies .filters .filter .dropdown-menu.sort li,
-.container-body .container-tvshows .filters .filter .dropdown-menu.sort li,
-.container-body .container-topimdb .filters .filter .dropdown-menu.sort li {
-  width: 100%;
-}
-
-.container-body .container-movies .filters .filter .dropdown-menu.c1 li,
-.container-body .container-tvshows .filters .filter .dropdown-menu.c1 li,
-.container-body .container-topimdb .filters .filter .dropdown-menu.c1 li {
-  width: 100%;
-}
-
-.container-body .container-movies .filters .filter .dropdown-menu,
-.container-body .container-tvshows .filters .filter .dropdown-menu,
-.container-body .container-topimdb .filters .filter .dropdown-menu {
-  list-style: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  display: none;
-  float: left;
-  min-width: 10rem;
-  margin: 0.125rem 0 0;
-  font-size: 1rem;
-  color: #444;
-  text-align: left;
-  list-style: none;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
-  margin-top: 5px;
-  font-size: 1em;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.container-body .container-movies .filters .filter .dropdown-menu li,
-.container-body .container-tvshows .filters .filter .dropdown-menu li,
-.container-body .container-topimdb .filters .filter .dropdown-menu li {
-  width: 25%;
-  float: left;
-  color: #343a40;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  line-height: 30px;
-}
-
-.container-body .container-movies .filters .filter .dropdown-menu li:hover,
-.container-body .container-tvshows .filters .filter .dropdown-menu li:hover,
-.container-body .container-topimdb .filters .filter .dropdown-menu li:hover {
-  background-color: #17a2b8;
-  cursor: pointer;
-}
-
-.container-body .container-movies .filters .filter .dropdown-menu li input,
-.container-body .container-tvshows .filters .filter .dropdown-menu li input,
-.container-body .container-topimdb .filters .filter .dropdown-menu li input {
-  position: inherit;
-  cursor: pointer;
-  float: left;
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-.container-body .container-movies .filters .filter .dropdown-menu li input[type="checkbox"],
-.container-body .container-movies .filters .filter .dropdown-menu li input[type="radio"],
-.container-body .container-tvshows .filters .filter .dropdown-menu li input[type="checkbox"],
-.container-body .container-tvshows .filters .filter .dropdown-menu li input[type="radio"],
-.container-body .container-topimdb .filters .filter .dropdown-menu li input[type="checkbox"],
-.container-body .container-topimdb .filters .filter .dropdown-menu li input[type="radio"] {
-  margin-left: 5px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0;
-}
-
-.container-body .container-movies .filters .filter .dropdown-menu li label,
-.container-body .container-tvshows .filters .filter .dropdown-menu li label,
-.container-body .container-topimdb .filters .filter .dropdown-menu li label {
-  margin-left: 6px;
-  cursor: pointer;
-  float: left;
-  display: block;
-}
-
-.container-body .container-movies .pagenav,
-.container-body .container-tvshows .pagenav,
-.container-body .container-topimdb .pagenav {
-  width: 100%;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 15px;
-}
-
-.container-body .container-movies .pagenav ul,
-.container-body .container-tvshows .pagenav ul,
-.container-body .container-topimdb .pagenav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-left: 0;
-  list-style: none;
-  border-radius: 0.25rem;
-  list-style: none;
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-.container-body .container-movies .pagenav ul li.active span,
-.container-body .container-tvshows .pagenav ul li.active span,
-.container-body .container-topimdb .pagenav ul li.active span {
-  background: #17a2b8;
-  color: #fff;
-}
-
-.container-body .container-movies .pagenav ul li,
-.container-body .container-tvshows .pagenav ul li,
-.container-body .container-topimdb .pagenav ul li {
-  display: inline-block;
-  margin: 0 2px 5px;
-}
-
-.container-body .container-movies .pagenav ul li:hover,
-.container-body .container-tvshows .pagenav ul li:hover,
-.container-body .container-topimdb .pagenav ul li:hover {
-  border-radius: 50%;
-  background-color: #ddd;
-}
-
-.container-body .container-movies .pagenav ul li a,
-.container-body .container-movies .pagenav ul li span,
-.container-body .container-tvshows .pagenav ul li a,
-.container-body .container-tvshows .pagenav ul li span,
-.container-body .container-topimdb .pagenav ul li a,
-.container-body .container-topimdb .pagenav ul li span {
-  display: block;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  color: #212529;
-  border-radius: 50%;
-  text-decoration: none;
-}
-
 footer {
   margin-top: 3rem;
   font-size: 0.95em;
@@ -1838,6 +1094,7 @@ footer .foo-b .container .links a:hover {
 /* On screens that are 992px or less, set the background color to blue */
 @media screen and (max-width: 992px) {
   header {
+    padding: 0.8rem 2.5rem;
     background-color: #0f6674;
   }
   header .menu-toggle {
@@ -1851,6 +1108,85 @@ footer .foo-b .container .links a:hover {
   }
   header .menu-toggle .fa {
     font-weight: 900;
+  }
+  header .menu {
+    min-width: 450px;
+    position: absolute;
+    top: 66px;
+    left: 30px;
+    overflow: hidden;
+    max-width: 360px;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 99;
+    background: #1b474e;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+  }
+  header .menu li {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: left;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #27646e;
+  }
+  header .menu li:last-child {
+    border-bottom: none;
+  }
+  header .menu li a {
+    text-decoration: none;
+    color: #adb5bd;
+    padding: 10px 0;
+    display: block;
+    margin: 0 6px;
+    text-transform: none;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  header .menu li a i {
+    display: block;
+    float: right;
+    margin-top: 5px;
+    background: #dee2e6;
+    color: #212529;
+    padding: 2px 3px;
+    border-radius: 2px;
+    font-size: 0.7em;
+  }
+  header .menu li ul.genre,
+  header .menu li ul.country {
+    position: static;
+    width: 100% !important;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 0.3rem;
+    margin: 0;
+    padding: 10px 15px;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  header .menu li ul.genre li,
+  header .menu li ul.country li {
+    width: 50% !important;
+    list-style: none;
+    float: left;
+    border-bottom: none;
+  }
+  header .menu li ul.genre li a,
+  header .menu li ul.country li a {
+    font-size: 0.9em;
+    display: block;
+    padding: 5px 10px;
+    color: #444;
+    text-decoration: none;
+    background-color: transparent;
   }
   header .head_l {
     width: 100%;
@@ -1988,6 +1324,9 @@ footer .foo-b .container .links a:hover {
 
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 600px) {
+  header {
+    padding: 0.8rem 1.2rem;
+  }
   header .head_l {
     width: 100%;
     text-align: center;
@@ -2012,6 +1351,11 @@ footer .foo-b .container .links a:hover {
   }
   header .head_r .head_r-auth p {
     display: none;
+  }
+  header .menu {
+    min-width: 0;
+    right: 0;
+    left: 0;
   }
   .modal .modal-login {
     width: 100%;
@@ -2039,6 +1383,9 @@ footer .foo-b .container .links a:hover {
   }
   .container-body .home-container .bl .content .filmlist .item {
     width: 49.2%;
+  }
+  .container-body .home-container .bl .content .filmlist .item h3 {
+    margin-bottom: 5px;
   }
 }
 /*# sourceMappingURL=App.css.map */
