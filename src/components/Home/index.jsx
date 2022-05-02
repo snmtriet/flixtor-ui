@@ -4,6 +4,7 @@ function Home() {
   const [movies, setMovies] = useState([]);
   const [moviesTV, setMoviesTV] = useState([]);
   const [lastestMovie, setLastestMovie] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getData = async () => {
@@ -18,6 +19,7 @@ function Home() {
         setMovies(typeMovie);
         setMoviesTV(typeTV);
         setLastestMovie(typeMovie.reverse());
+        setLoading(false);
       } catch (error) {
         console.log("🍕 ~ error", error);
       }
@@ -86,38 +88,58 @@ function Home() {
           </div>
           <br />
           <div className="content">
-            <div className="filmlist">
-              {movies.length > 0 &&
-                movies.slice(0, -14).map((item) => {
+            {loading ? (
+              <div style={{ display: "flex", flexWrap: "wrap" }}>
+                {[0, 1, 2, 3].map((item, index) => {
                   return (
-                    <div key={item._id} className="item">
-                      <div className="icons">
-                        <div className="quality">{item.quality}</div>
-                      </div>
-                      <a href={item.image} title={item.name} className="poster">
-                        <div className="play"></div>
-                        <img src={item.image} />
-                        <div className="overlay-poster"></div>
-                      </a>
-                      <h3>
-                        <a
-                          className="title"
-                          title={item.name}
-                          href={item.image}
-                        >
-                          {item.name}
-                        </a>
-                      </h3>
-                      <div className="meta">
-                        <span className="release">{2022}</span>
-                        <i className="dot"></i>
-                        {item.time === 0 ? "na min" : `${item.time} min`}
-                        <i className="type">{item.category.name}</i>
+                    <div key={index} className="card is-loading">
+                      <div className="image"></div>
+                      <div className="content">
+                        <h2></h2>
+                        <p></p>
                       </div>
                     </div>
                   );
                 })}
-            </div>
+              </div>
+            ) : (
+              <div className="filmlist">
+                {movies.length > 0 &&
+                  movies.slice(0, -14).map((item) => {
+                    return (
+                      <div key={item._id} className="item">
+                        <div className="icons">
+                          <div className="quality">{item.quality}</div>
+                        </div>
+                        <a
+                          href={item.image}
+                          title={item.name}
+                          className="poster"
+                        >
+                          <div className="play"></div>
+                          <img src={item.image} />
+                          <div className="overlay-poster"></div>
+                        </a>
+                        <h3>
+                          <a
+                            className="title"
+                            title={item.name}
+                            href={item.image}
+                          >
+                            {item.name}
+                          </a>
+                        </h3>
+                        <div className="meta">
+                          <span className="release">{2022}</span>
+                          <i className="dot"></i>
+                          {item.time === 0 ? "na min" : `${item.time} min`}
+                          <i className="type">{item.category.name}</i>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            )}
           </div>
         </section>
 
@@ -130,11 +152,89 @@ function Home() {
             </a>
           </div>
           <div className="content">
-            <div className="filmlist">
-              {lastestMovie
-                .reverse()
-                .slice(0, 14)
-                .map((item) => {
+            {loading ? (
+              <div style={{ display: "flex" }}>
+                {[0, 1, 2, 3].map((item, index) => {
+                  return (
+                    <div key={index} className="card is-loading">
+                      <div className="image"></div>
+                      <div className="content">
+                        <h2></h2>
+                        <p></p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="filmlist">
+                {lastestMovie
+                  .reverse()
+                  .slice(0, 14)
+                  .map((item) => {
+                    return (
+                      <div key={item._id} className="item">
+                        <div className="icons">
+                          <div className="quality">{item.quality}</div>
+                        </div>
+                        <a
+                          href={item.image}
+                          title={item.name}
+                          className="poster"
+                        >
+                          <div className="play"></div>
+                          <img src={item.image} />
+                          <div className="overlay-poster"></div>
+                        </a>
+                        <h3>
+                          <a
+                            className="title"
+                            title={item.name}
+                            href={item.image}
+                          >
+                            {item.name}
+                          </a>
+                        </h3>
+                        <div className="meta">
+                          <span className="release">2022</span>
+                          <i className="dot"></i>
+                          {item.time === 0 ? "na min" : `${item.time} min`}
+                          <i className="type">{item.category.name}</i>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            )}
+          </div>
+        </section>
+
+        <section className="bl">
+          <div className="heading simple">
+            <h2>Latest TV-Series</h2>
+            <a className="more" href="/#">
+              View all
+              <i className="fa fa-chevron-circle-right"></i>
+            </a>
+          </div>
+          <div className="content">
+            {loading ? (
+              <div style={{ display: "flex" }}>
+                {[0, 1, 2, 3].map((item, index) => {
+                  return (
+                    <div key={index} className="card is-loading">
+                      <div className="image"></div>
+                      <div className="content">
+                        <h2></h2>
+                        <p></p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="filmlist">
+                {moviesTV.map((item) => {
                   return (
                     <div key={item._id} className="item">
                       <div className="icons">
@@ -155,53 +255,15 @@ function Home() {
                         </a>
                       </h3>
                       <div className="meta">
-                        <span className="release">2022</span>
-                        <i className="dot"></i>
-                        {item.time === 0 ? "na min" : `${item.time} min`}
+                        SS 4<i className="dot"></i>
+                        {item.time === 0 && "na min"}
                         <i className="type">{item.category.name}</i>
                       </div>
                     </div>
                   );
                 })}
-            </div>
-          </div>
-        </section>
-
-        <section className="bl">
-          <div className="heading simple">
-            <h2>Latest TV-Series</h2>
-            <a className="more" href="/tv-series">
-              View all
-              <i className="fa fa-chevron-circle-right"></i>
-            </a>
-          </div>
-          <div className="content">
-            <div className="filmlist">
-              {moviesTV.map((item) => {
-                return (
-                  <div key={item._id} className="item">
-                    <div className="icons">
-                      <div className="quality">{item.quality}</div>
-                    </div>
-                    <a href={item.image} title={item.name} className="poster">
-                      <div className="play"></div>
-                      <img src={item.image} />
-                      <div className="overlay-poster"></div>
-                    </a>
-                    <h3>
-                      <a className="title" title={item.name} href={item.image}>
-                        {item.name}
-                      </a>
-                    </h3>
-                    <div className="meta">
-                      SS 4<i className="dot"></i>
-                      {item.time === 0 && "na min"}
-                      <i className="type">{item.category.name}</i>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+              </div>
+            )}
           </div>
         </section>
       </div>

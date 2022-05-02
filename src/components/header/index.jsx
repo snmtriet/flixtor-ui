@@ -32,7 +32,11 @@ function Header() {
             setShowMenuMobile(!showMenuMobile);
           }}
         >
-          <i className="fa fa-list-ul"></i>
+          {showMenuMobile ? (
+            <i className="fa-solid fa-xmark"></i>
+          ) : (
+            <i className="fa fa-list-ul"></i>
+          )}
         </div>
         {showMenuMobile && (
           <ul className="menu">
