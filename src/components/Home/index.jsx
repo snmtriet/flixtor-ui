@@ -88,7 +88,7 @@ function Home() {
           <div className="content">
             <div className="filmlist">
               {movies.length > 0 &&
-                movies.slice(0, -8).map((item) => {
+                movies.slice(0, -14).map((item) => {
                   return (
                     <div key={item._id} className="item">
                       <div className="icons">
@@ -133,7 +133,7 @@ function Home() {
             <div className="filmlist">
               {lastestMovie
                 .reverse()
-                .slice(0, 8)
+                .slice(0, 14)
                 .map((item) => {
                   return (
                     <div key={item._id} className="item">
