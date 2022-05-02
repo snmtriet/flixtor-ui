@@ -258,61 +258,6 @@ header {
 }
 
 .container-body {
-  // site page
-  .site-container {
-    padding: 0 29rem;
-    .index-base {
-      text-align: center;
-      margin-top: 90px;
-
-      .logo {
-        img {
-          margin-bottom: 26px;
-        }
-      }
-      h3 {
-        font-size: 1.75rem;
-        color: $dark-text;
-        margin-bottom: 2rem;
-      }
-
-      .view-full-site {
-        text-decoration: none;
-        background-color: $cyan;
-        color: $white;
-        text-align: center;
-        padding: 0.75rem 1.5rem;
-        font-size: 1.05rem;
-        border-radius: 0.3rem;
-      }
-
-      .content {
-        color: $dark-text;
-        margin-top: 5rem;
-        text-align: left;
-
-        h5 {
-          font-size: 1.25rem;
-          margin-bottom: 0.5rem;
-          font-weight: 500;
-          line-height: 0.6;
-          font-weight: bold;
-        }
-        p {
-          margin-top: 0;
-          margin-bottom: 1rem;
-          display: block;
-          margin-block-start: 1em;
-          margin-block-end: 1em;
-          margin-inline-start: 0px;
-          margin-inline-end: 0px;
-        }
-      }
-    }
-  }
-
-  // contact page
-
   .bl {
     display: block;
     padding: 0.8rem 8.5rem;
@@ -353,53 +298,6 @@ header {
       margin-top: 2rem;
 
       //loading when fetch data
-      .card {
-        margin: 0 0.4%;
-        width: 170px;
-        background: #fff;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-        .image {
-          img {
-            max-width: 100%;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-          }
-        }
-        .content {
-          padding: 15px 10px;
-        }
-      }
-      .card.is-loading {
-        .image,
-        h2,
-        p {
-          background: #eee;
-          background: linear-gradient(
-            110deg,
-            #ececec 8%,
-            #f5f5f5 18%,
-            #ececec 33%
-          );
-          border-radius: 5px;
-          background-size: 200% 100%;
-          animation: 1.5s shine linear infinite;
-        }
-        .image {
-          height: 200px;
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
-        }
-        h2 {
-          height: 10px;
-          width: 120px;
-        }
-        p {
-          height: 10px;
-          margin-top: 10px;
-          width: 70px;
-        }
-      }
     }
   }
   .bl.heading {
@@ -562,6 +460,55 @@ header {
       .content {
         width: 100%;
         padding: 1rem 0;
+
+        .card {
+          margin: 0 0.4%;
+          margin-bottom: 10px;
+          width: 11.7%;
+          background: #fff;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+          .image {
+            img {
+              max-width: 100%;
+              border-top-left-radius: 5px;
+              border-top-right-radius: 5px;
+            }
+          }
+          .content {
+            padding: 15px 10px;
+          }
+        }
+        .card.is-loading {
+          .image,
+          h2,
+          p {
+            background: #eee;
+            background: linear-gradient(
+              110deg,
+              #ececec 8%,
+              #f5f5f5 18%,
+              #ececec 33%
+            );
+            border-radius: 5px;
+            background-size: 200% 100%;
+            animation: 1.5s shine linear infinite;
+          }
+          .image {
+            height: 270px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+          h2 {
+            height: 10px;
+            width: 120px;
+          }
+          p {
+            height: 10px;
+            margin-top: 10px;
+            width: 70px;
+          }
+        }
 
         .filmlist {
           margin: 0 -0.4%;
@@ -982,6 +929,12 @@ footer {
       .bl {
         padding: 0.8rem 1rem;
         .content {
+          .card {
+            width: 24%;
+            .image {
+              height: 350px;
+            }
+          }
           .filmlist {
             .item {
               float: left;
@@ -1193,6 +1146,12 @@ footer {
           }
         }
         .content {
+          .card {
+            width: 24.2%;
+            .image {
+              height: 220px;
+            }
+          }
           .filmlist {
             .item {
               float: left;
@@ -1279,7 +1238,10 @@ footer {
   }
 
   .container-body {
-    .home-container {
+    .home-container,
+    .container-movies,
+    .container-tvshows,
+    .container-topimdb {
       .heading-search {
         display: none;
       }
@@ -1294,6 +1256,12 @@ footer {
           margin-top: 30px;
         }
         .content {
+          .card {
+            width: 49.2%;
+            .image {
+              height: 220px;
+            }
+          }
           .filmlist {
             .item {
               width: 49.2%;

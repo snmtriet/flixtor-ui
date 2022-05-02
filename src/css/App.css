@@ -263,63 +263,6 @@ header .head_r .head_r-auth p {
   display: none;
 }
 
-.container-body .site-container {
-  padding: 0 29rem;
-}
-
-.container-body .site-container .index-base {
-  text-align: center;
-  margin-top: 90px;
-}
-
-.container-body .site-container .index-base .logo img {
-  margin-bottom: 26px;
-}
-
-.container-body .site-container .index-base h3 {
-  font-size: 1.75rem;
-  color: #444;
-  margin-bottom: 2rem;
-}
-
-.container-body .site-container .index-base .view-full-site {
-  text-decoration: none;
-  background-color: #17a2b8;
-  color: #fff;
-  text-align: center;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.05rem;
-  border-radius: 0.3rem;
-}
-
-.container-body .site-container .index-base .content {
-  color: #444;
-  margin-top: 5rem;
-  text-align: left;
-}
-
-.container-body .site-container .index-base .content h5 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  line-height: 0.6;
-  font-weight: bold;
-}
-
-.container-body .site-container .index-base .content p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  display: block;
-  -webkit-margin-before: 1em;
-          margin-block-start: 1em;
-  -webkit-margin-after: 1em;
-          margin-block-end: 1em;
-  -webkit-margin-start: 0px;
-          margin-inline-start: 0px;
-  -webkit-margin-end: 0px;
-          margin-inline-end: 0px;
-}
-
 .container-body .bl {
   display: block;
   padding: 0.8rem 8.5rem;
@@ -356,53 +299,6 @@ header .head_r .head_r-auth p {
 
 .container-body .bl .content {
   margin-top: 2rem;
-}
-
-.container-body .bl .content .card {
-  margin: 0 0.4%;
-  width: 170px;
-  background: #fff;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-.container-body .bl .content .card .image img {
-  max-width: 100%;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.container-body .bl .content .card .content {
-  padding: 15px 10px;
-}
-
-.container-body .bl .content .card.is-loading .image,
-.container-body .bl .content .card.is-loading h2,
-.container-body .bl .content .card.is-loading p {
-  background: #eee;
-  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
-  border-radius: 5px;
-  background-size: 200% 100%;
-  -webkit-animation: 1.5s shine linear infinite;
-          animation: 1.5s shine linear infinite;
-}
-
-.container-body .bl .content .card.is-loading .image {
-  height: 200px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.container-body .bl .content .card.is-loading h2 {
-  height: 10px;
-  width: 120px;
-}
-
-.container-body .bl .content .card.is-loading p {
-  height: 10px;
-  margin-top: 10px;
-  width: 70px;
 }
 
 .container-body .bl.heading {
@@ -623,6 +519,81 @@ header .head_r .head_r-auth p {
 .container-body .container-topimdb .bl .content {
   width: 100%;
   padding: 1rem 0;
+}
+
+.container-body .home-container .bl .content .card,
+.container-body .container-movies .bl .content .card,
+.container-body .container-tvshows .bl .content .card,
+.container-body .container-topimdb .bl .content .card {
+  margin: 0 0.4%;
+  margin-bottom: 10px;
+  width: 11.7%;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.container-body .home-container .bl .content .card .image img,
+.container-body .container-movies .bl .content .card .image img,
+.container-body .container-tvshows .bl .content .card .image img,
+.container-body .container-topimdb .bl .content .card .image img {
+  max-width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.container-body .home-container .bl .content .card .content,
+.container-body .container-movies .bl .content .card .content,
+.container-body .container-tvshows .bl .content .card .content,
+.container-body .container-topimdb .bl .content .card .content {
+  padding: 15px 10px;
+}
+
+.container-body .home-container .bl .content .card.is-loading .image,
+.container-body .home-container .bl .content .card.is-loading h2,
+.container-body .home-container .bl .content .card.is-loading p,
+.container-body .container-movies .bl .content .card.is-loading .image,
+.container-body .container-movies .bl .content .card.is-loading h2,
+.container-body .container-movies .bl .content .card.is-loading p,
+.container-body .container-tvshows .bl .content .card.is-loading .image,
+.container-body .container-tvshows .bl .content .card.is-loading h2,
+.container-body .container-tvshows .bl .content .card.is-loading p,
+.container-body .container-topimdb .bl .content .card.is-loading .image,
+.container-body .container-topimdb .bl .content .card.is-loading h2,
+.container-body .container-topimdb .bl .content .card.is-loading p {
+  background: #eee;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  -webkit-animation: 1.5s shine linear infinite;
+          animation: 1.5s shine linear infinite;
+}
+
+.container-body .home-container .bl .content .card.is-loading .image,
+.container-body .container-movies .bl .content .card.is-loading .image,
+.container-body .container-tvshows .bl .content .card.is-loading .image,
+.container-body .container-topimdb .bl .content .card.is-loading .image {
+  height: 270px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.container-body .home-container .bl .content .card.is-loading h2,
+.container-body .container-movies .bl .content .card.is-loading h2,
+.container-body .container-tvshows .bl .content .card.is-loading h2,
+.container-body .container-topimdb .bl .content .card.is-loading h2 {
+  height: 10px;
+  width: 120px;
+}
+
+.container-body .home-container .bl .content .card.is-loading p,
+.container-body .container-movies .bl .content .card.is-loading p,
+.container-body .container-tvshows .bl .content .card.is-loading p,
+.container-body .container-topimdb .bl .content .card.is-loading p {
+  height: 10px;
+  margin-top: 10px;
+  width: 70px;
 }
 
 .container-body .home-container .bl .content .filmlist,
@@ -1132,6 +1103,12 @@ footer .foo-b .container .links a:hover {
   .container-body .home-container .bl {
     padding: 0.8rem 1rem;
   }
+  .container-body .home-container .bl .content .card {
+    width: 24%;
+  }
+  .container-body .home-container .bl .content .card .image {
+    height: 350px;
+  }
   .container-body .home-container .bl .content .filmlist .item {
     float: left;
     display: block;
@@ -1353,6 +1330,12 @@ footer .foo-b .container .links a:hover {
   .container-body .home-container .bl .simple a i {
     margin-left: 10px;
   }
+  .container-body .home-container .bl .content .card {
+    width: 24.2%;
+  }
+  .container-body .home-container .bl .content .card .image {
+    height: 220px;
+  }
   .container-body .home-container .bl .content .filmlist .item {
     float: left;
     display: block;
@@ -1434,24 +1417,54 @@ footer .foo-b .container .links a:hover {
   .modal .modal-register.center {
     top: 3%;
   }
-  .container-body .home-container .heading-search {
+  .container-body .home-container .heading-search,
+  .container-body .container-movies .heading-search,
+  .container-body .container-tvshows .heading-search,
+  .container-body .container-topimdb .heading-search {
     display: none;
   }
-  .container-body .home-container .bl {
+  .container-body .home-container .bl,
+  .container-body .container-movies .bl,
+  .container-body .container-tvshows .bl,
+  .container-body .container-topimdb .bl {
     padding: 0.5rem 0.5rem;
   }
-  .container-body .home-container .bl .heading {
+  .container-body .home-container .bl .heading,
+  .container-body .container-movies .bl .heading,
+  .container-body .container-tvshows .bl .heading,
+  .container-body .container-topimdb .bl .heading {
     margin-bottom: 20px;
   }
-  .container-body .home-container .bl .tabs {
+  .container-body .home-container .bl .tabs,
+  .container-body .container-movies .bl .tabs,
+  .container-body .container-tvshows .bl .tabs,
+  .container-body .container-topimdb .bl .tabs {
     position: absolute;
     left: -6px;
     margin-top: 30px;
   }
-  .container-body .home-container .bl .content .filmlist .item {
+  .container-body .home-container .bl .content .card,
+  .container-body .container-movies .bl .content .card,
+  .container-body .container-tvshows .bl .content .card,
+  .container-body .container-topimdb .bl .content .card {
     width: 49.2%;
   }
-  .container-body .home-container .bl .content .filmlist .item h3 {
+  .container-body .home-container .bl .content .card .image,
+  .container-body .container-movies .bl .content .card .image,
+  .container-body .container-tvshows .bl .content .card .image,
+  .container-body .container-topimdb .bl .content .card .image {
+    height: 220px;
+  }
+  .container-body .home-container .bl .content .filmlist .item,
+  .container-body .container-movies .bl .content .filmlist .item,
+  .container-body .container-tvshows .bl .content .filmlist .item,
+  .container-body .container-topimdb .bl .content .filmlist .item {
+    width: 49.2%;
+  }
+  .container-body .home-container .bl .content .filmlist .item h3,
+  .container-body .container-movies .bl .content .filmlist .item h3,
+  .container-body .container-tvshows .bl .content .filmlist .item h3,
+  .container-body .container-topimdb .bl .content .filmlist .item h3 {
     margin-bottom: 5px;
   }
 }

@@ -153,7 +153,7 @@ function Home() {
           </div>
           <div className="content">
             {loading ? (
-              <div style={{ display: "flex" }}>
+              <div style={{ display: "flex", flexWrap: "wrap" }}>
                 {[0, 1, 2, 3].map((item, index) => {
                   return (
                     <div key={index} className="card is-loading">
@@ -219,7 +219,7 @@ function Home() {
           </div>
           <div className="content">
             {loading ? (
-              <div style={{ display: "flex" }}>
+              <div style={{ display: "flex", flexWrap: "wrap" }}>
                 {[0, 1, 2, 3].map((item, index) => {
                   return (
                     <div key={index} className="card is-loading">
